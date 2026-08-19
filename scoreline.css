@@ -1,0 +1,199 @@
+/* scoreline.css — HGFUNTW 運動賽事說明單元 */
+
+:root{
+  --void:#0a0a0b;
+  --void-2:#121215;
+  --void-3:#1a1a1f;
+  --edge:rgba(255,255,255,.11);
+  --edge-2:rgba(255,255,255,.2);
+  --lime:#c8f135;
+  --lime-dim:#9fc523;
+  --snow:#f4f4f5;
+  --dim:#8b8b95;
+  --hold:1160px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--void);color:var(--snow);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  font-size:15.5px;line-height:1.8;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+p{margin:0}
+h1,h2,h3,h4{font-family:"Instrument Sans","Noto Sans TC","PingFang TC",system-ui,sans-serif;
+  font-weight:600;line-height:1.2;letter-spacing:-.022em;margin:0;text-wrap:balance}
+h1 i,h2 i{font-style:normal}
+.mid{max-width:var(--hold);margin:0 auto;padding:0 26px}
+
+/* ── 頂欄：極簡、導覽置中 ── */
+.bar{border-bottom:1px solid var(--edge);position:sticky;top:0;z-index:20;
+  background:rgba(10,10,11,.86);backdrop-filter:blur(10px)}
+.bar-in{max-width:var(--hold);margin:0 auto;padding:15px 26px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:"Instrument Sans",system-ui,sans-serif;font-weight:700;
+  font-size:17px;letter-spacing:.02em}
+.bar-nav{display:flex;gap:22px;font-size:14px;color:var(--dim)}
+.bar-nav a:hover{color:var(--snow)}
+.bar-act{display:flex;align-items:center;gap:16px}
+.lnk{font-size:14px;color:var(--dim)}
+.lnk:hover{color:var(--snow)}
+.pill{background:var(--lime);color:#12140a;font-weight:700;font-size:14px;
+  padding:9px 18px;border-radius:999px;white-space:nowrap}
+.pill:hover{background:#d8ff4d}
+
+/* ── 開場：大留白＋超大標題 ── */
+.open{padding:112px 0 0}
+.open h1{font-size:clamp(34px,5.2vw,66px);letter-spacing:-.03em;max-width:100%}
+.open .under{margin-top:34px;display:flex;justify-content:space-between;
+  align-items:flex-end;gap:24px;flex-wrap:wrap}
+.open .under p{color:var(--dim);font-size:16px;max-width:520px}
+.tagline{display:flex;align-items:center;gap:10px;font-size:14.5px;white-space:nowrap}
+.tagline b{color:var(--lime);font-weight:700}
+.tagline a{color:var(--snow)}
+.tagline a:hover{color:var(--lime)}
+
+/* ── 巨型看板面板 ── */
+.board{margin:56px auto 0;max-width:var(--hold);padding:0 26px}
+.board-in{border:1px solid var(--edge);border-radius:14px;overflow:hidden;
+  background:var(--void-2);display:grid;grid-template-columns:212px 1fr 236px}
+.board-l{border-right:1px solid var(--edge);padding:16px 0}
+.board-l h4{font-size:11.5px;color:var(--dim);letter-spacing:.09em;padding:0 18px 10px}
+.board-l a{display:block;padding:9px 18px;font-size:14px;color:var(--dim);
+  border-left:2px solid transparent}
+.board-l a.on,.board-l a:hover{color:var(--snow);background:var(--void-3);border-left-color:var(--lime)}
+.board-c{position:relative;min-height:330px}
+.board-c img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.board-c .over{position:relative;z-index:2;padding:22px;display:grid;gap:12px;align-content:start}
+.matchcard{background:rgba(10,10,11,.82);border:1px solid var(--edge);border-radius:10px;padding:14px 16px}
+.matchcard .top{display:flex;justify-content:space-between;font-size:12px;color:var(--dim)}
+.matchcard .team{display:flex;justify-content:space-between;margin-top:8px;font-size:15px}
+.matchcard .team b{font-weight:500}
+.matchcard .team span{color:var(--lime);font-family:"Instrument Sans",system-ui,sans-serif;font-weight:700}
+.board-r{border-left:1px solid var(--edge);padding:16px 18px}
+.board-r h4{font-size:11.5px;color:var(--dim);letter-spacing:.09em;margin-bottom:12px}
+.oddsrow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--edge);font-size:14px}
+.oddsrow:last-child{border-bottom:0}
+.oddsrow b{font-family:"Instrument Sans",system-ui,sans-serif;font-weight:700;color:var(--lime)}
+.board-note{color:var(--dim);font-size:12.6px;text-align:center;margin-top:12px}
+
+/* ── 細線分隔功能列 ── */
+.rows{margin-top:96px;border-top:1px solid var(--edge)}
+.rowitem{border-bottom:1px solid var(--edge)}
+.rowitem-in{max-width:var(--hold);margin:0 auto;padding:26px;
+  display:grid;grid-template-columns:246px 1fr;gap:30px;align-items:start}
+.rowitem h3{font-size:19px}
+.rowitem p{color:var(--dim);font-size:14.6px}
+.rowitem .num{font-family:"Instrument Sans",system-ui,sans-serif;color:var(--lime);
+  font-size:12.5px;letter-spacing:.1em;display:block;margin-bottom:6px}
+
+/* ── 三欄大圖卡 ── */
+.sect{padding:78px 0 0}
+.sect-h{font-size:30px;margin-bottom:8px}
+.sect-s{color:var(--dim);margin-bottom:26px;max-width:600px}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.big{border:1px solid var(--edge);border-radius:12px;overflow:hidden;background:var(--void-2);display:block}
+.big img{width:100%;height:230px;object-fit:cover}
+.big .txt{padding:18px}
+.big h3{font-size:18px;margin-bottom:6px}
+.big p{color:var(--dim);font-size:14px}
+.big .go{margin-top:12px;font-size:13.5px;color:var(--lime)}
+.big:hover{border-color:var(--edge-2)}
+
+/* ── 雙圖區塊 ── */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.duo figure{margin:0;border:1px solid var(--edge);border-radius:12px;overflow:hidden;position:relative}
+.duo img{width:100%;height:268px;object-fit:cover}
+.duo figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;
+  background:linear-gradient(to top,rgba(10,10,11,.94),rgba(10,10,11,0));font-size:14.5px}
+
+/* ── 四欄現場圖帶 ── */
+.strip{margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.strip figure{margin:0;position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--edge)}
+.strip img{width:100%;height:176px;object-fit:cover}
+.strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;font-size:13.4px;
+  background:linear-gradient(to top,rgba(10,10,11,.92),rgba(10,10,11,0))}
+
+/* ── 數字帶 ── */
+.stats{margin-top:78px;border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}
+.stats-in{max-width:var(--hold);margin:0 auto;padding:34px 26px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.stat b{display:block;font-family:"Instrument Sans",system-ui,sans-serif;
+  font-size:38px;font-weight:700;color:var(--lime);letter-spacing:-.03em;line-height:1.1}
+.stat span{display:block;color:var(--dim);font-size:13.6px;margin-top:4px}
+
+/* ── 問答 ── */
+.qlist{margin-top:26px;border-top:1px solid var(--edge)}
+.qitem{border-bottom:1px solid var(--edge);padding:18px 0;
+  display:grid;grid-template-columns:280px 1fr;gap:26px}
+.qitem b{font-size:15.5px;font-weight:500}
+.qitem p{color:var(--dim);font-size:14.4px}
+
+/* ── 收尾 ── */
+.end{margin-top:88px;padding:70px 0;border-top:1px solid var(--edge);text-align:center}
+.end h2{font-size:34px;margin-bottom:10px}
+.end p{color:var(--dim);max-width:520px;margin:0 auto 22px}
+.end .pill{padding:13px 30px;font-size:15px}
+
+/* ── 內頁 ── */
+.lead{padding:74px 0 0}
+.lead .kicker{font-family:"Instrument Sans",system-ui,sans-serif;color:var(--lime);
+  font-size:12.5px;letter-spacing:.11em;margin-bottom:14px}
+.lead h1{font-size:clamp(29px,4.1vw,50px);letter-spacing:-.028em}
+.lead p{color:var(--dim);font-size:16.5px;max-width:640px;margin-top:16px}
+.wide{margin:44px auto 0;max-width:var(--hold);padding:0 26px}
+.wide img{width:100%;height:360px;object-fit:cover;border-radius:12px;border:1px solid var(--edge)}
+.doc{max-width:800px;margin:0 auto;padding:46px 26px 0}
+.doc h2{font-size:23px;margin:36px 0 12px}
+.doc h2:first-child{margin-top:0}
+.doc h3{font-size:17px;margin:24px 0 8px}
+.doc p{margin-bottom:14px;color:#d3d3d8}
+.doc ul{margin:0 0 16px;padding-left:20px;color:#d3d3d8}
+.doc li{margin-bottom:7px}
+.doc strong{color:var(--snow);font-weight:500}
+.callout{border:1px solid var(--edge);border-left:2px solid var(--lime);border-radius:0 10px 10px 0;
+  background:var(--void-2);padding:16px 20px;margin:20px 0;font-size:14.6px;color:#d3d3d8}
+.callout b{display:block;color:var(--snow);margin-bottom:5px;font-weight:500}
+.tw{overflow-x:auto;margin:18px 0 22px}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:14.2px}
+th,td{border:1px solid var(--edge);padding:10px 13px;text-align:left}
+th{background:var(--void-2);font-weight:500;color:var(--snow)}
+td{color:#d3d3d8}
+.inline-cta{margin:30px 0 6px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+
+/* ── 其他單元卡列 ── */
+.relwrap{margin-top:70px;border-top:1px solid var(--edge);padding-top:34px}
+.rel-h{font-size:15px;color:var(--dim);font-weight:400;margin-bottom:16px}
+.relgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rel{border:1px solid var(--edge);border-radius:10px;padding:14px 16px;background:var(--void-2)}
+.rel b{display:block;font-size:15px;font-weight:500}
+.rel span{color:var(--dim);font-size:13px}
+.rel:hover{border-color:var(--edge-2)}
+
+/* ── 頁尾 ── */
+.foot{margin-top:78px;border-top:1px solid var(--edge);padding:40px 0 0}
+.foot-in{display:grid;grid-template-columns:1.3fr 1fr auto;gap:32px;align-items:start}
+.foot-brand p{color:var(--dim);font-size:13.4px;margin-top:10px;max-width:360px}
+.foot-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 18px;font-size:14px;color:var(--dim)}
+.foot-nav a:hover{color:var(--snow)}
+.foot-fine{margin-top:32px;padding-top:16px;padding-bottom:24px;border-top:1px solid var(--edge);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--dim);font-size:12.6px}
+
+@media(max-width:960px){
+  .bar-nav{display:none}
+  .board-in{grid-template-columns:1fr}
+  .board-l,.board-r{border:0;border-top:1px solid var(--edge)}
+  .board-l{display:flex;flex-wrap:wrap;gap:6px;padding:12px 14px}
+  .board-l h4{width:100%;padding:0 0 6px}
+  .board-l a{border:1px solid var(--edge);border-radius:999px;padding:6px 14px}
+  .trio,.relgrid,.stats-in,.strip{grid-template-columns:repeat(2,1fr)}
+  .duo,.rowitem-in,.qitem,.foot-in{grid-template-columns:1fr}
+  .open{padding-top:64px}
+}
+@media(max-width:560px){
+  .trio,.relgrid,.stats-in,.duo,.strip{grid-template-columns:1fr}
+  .lead h1 i{display:block}
+  .wide img{height:230px}
+}
